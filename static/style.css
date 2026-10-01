@@ -1,0 +1,710 @@
+:root {
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #172033;
+
+    background: #f4f7fb;
+
+    line-height: 1.55;
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            #e9ddff 0,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at top left,
+            #d9efff 0,
+            transparent 28%
+        ),
+
+        #f4f7fb;
+
+}
+
+
+/* ---------------------------------------------------------
+   MAIN CONTAINER
+--------------------------------------------------------- */
+
+.container {
+
+    width:
+        min(
+            960px,
+            calc(100% - 32px)
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        48px 0 64px;
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.hero {
+
+    text-align:
+        center;
+
+    padding:
+        20px 10px 30px;
+
+}
+
+
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        999px;
+
+    background:
+        #e9e2ff;
+
+    color:
+        #5934a5;
+
+    font-weight:
+        700;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            42px,
+            8vw,
+            72px
+        );
+
+    margin:
+        10px 0 0;
+
+    letter-spacing:
+        -0.05em;
+
+}
+
+
+.hero p {
+
+    color:
+        #5e687a;
+
+    margin:
+        8px auto 0;
+
+    max-width:
+        650px;
+
+    font-size:
+        17px;
+
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+--------------------------------------------------------- */
+
+.card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .9
+        );
+
+    border:
+        1px solid #e2e7ef;
+
+    border-radius:
+        22px;
+
+    padding:
+        24px;
+
+    margin-top:
+        18px;
+
+    box-shadow:
+        0 14px 40px
+        rgba(
+            31,
+            42,
+            61,
+            .08
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   FORM
+--------------------------------------------------------- */
+
+label {
+
+    display:
+        block;
+
+    font-weight:
+        700;
+
+    margin:
+        0 0 8px;
+
+}
+
+
+select,
+textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid #cfd7e4;
+
+    border-radius:
+        12px;
+
+    background:
+        white;
+
+    padding:
+        12px 14px;
+
+    font:
+        inherit;
+
+    color:
+        inherit;
+
+    outline:
+        none;
+
+}
+
+
+select:focus,
+textarea:focus {
+
+    border-color:
+        #7654d6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            118,
+            84,
+            214,
+            .12
+        );
+
+}
+
+
+textarea {
+
+    resize:
+        vertical;
+
+    min-height:
+        180px;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTROLS
+--------------------------------------------------------- */
+
+.controls,
+.result-heading {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.quiz-count {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin:
+        0;
+
+}
+
+
+.quiz-count select {
+
+    width:
+        auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON
+--------------------------------------------------------- */
+
+button {
+
+    border:
+        0;
+
+    border-radius:
+        12px;
+
+    padding:
+        12px 18px;
+
+    background:
+        #6844c6;
+
+    color:
+        white;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .15s,
+        opacity .15s;
+
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+button:disabled {
+
+    opacity:
+        .6;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+}
+
+
+.secondary {
+
+    background:
+        #edf0f6;
+
+    color:
+        #30394a;
+
+    padding:
+        9px 13px;
+
+}
+
+
+/* ---------------------------------------------------------
+   STATUS
+--------------------------------------------------------- */
+
+.status {
+
+    color:
+        #667085;
+
+    min-height:
+        24px;
+
+    margin-bottom:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   RESULT
+--------------------------------------------------------- */
+
+.result-card h2 {
+
+    margin:
+        0;
+
+}
+
+
+.text-result {
+
+    margin-top:
+        16px;
+
+    padding:
+        18px;
+
+    background:
+        #f7f8fc;
+
+    border-radius:
+        14px;
+
+    overflow-wrap:
+        anywhere;
+
+}
+
+
+/* ---------------------------------------------------------
+   ERROR
+--------------------------------------------------------- */
+
+.error {
+
+    margin-top:
+        16px;
+
+    padding:
+        14px;
+
+    background:
+        #fff0f0;
+
+    border:
+        1px solid #ffd0d0;
+
+    color:
+        #a42323;
+
+    border-radius:
+        12px;
+
+}
+
+
+/* ---------------------------------------------------------
+   QUIZ
+--------------------------------------------------------- */
+
+.question {
+
+    margin-top:
+        18px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #e1e6ef;
+
+    border-radius:
+        16px;
+
+}
+
+
+.question h3 {
+
+    margin-top:
+        0;
+
+}
+
+
+.options {
+
+    display:
+        grid;
+
+    gap:
+        9px;
+
+}
+
+
+.option {
+
+    width:
+        100%;
+
+    text-align:
+        left;
+
+    background:
+        white;
+
+    color:
+        #263043;
+
+    border:
+        1px solid #d6dce7;
+
+    font-weight:
+        600;
+
+}
+
+
+.option.correct {
+
+    background:
+        #e8f8ef;
+
+    border-color:
+        #54b979;
+
+    color:
+        #176b39;
+
+}
+
+
+.option.wrong {
+
+    background:
+        #fff0f0;
+
+    border-color:
+        #e37a7a;
+
+    color:
+        #9b2525;
+
+}
+
+
+.feedback {
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        0;
+
+}
+
+
+.score {
+
+    margin-top:
+        18px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        900;
+
+    text-align:
+        center;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (
+    max-width: 600px
+) {
+
+    .container {
+
+        width:
+            min(
+                100% - 20px,
+                960px
+            );
+
+        padding-top:
+            24px;
+
+    }
+
+
+    .card {
+
+        padding:
+            17px;
+
+        border-radius:
+            16px;
+
+    }
+
+
+    .controls {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    button {
+
+        width:
+            100%;
+
+    }
+
+}
+.quiz-container {
+    margin-top: 20px;
+}
+
+.quiz-question {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.quiz-question h3 {
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.quiz-options {
+    margin-bottom: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    padding: 5px;
+}
+
+.option input[type="radio"] {
+    cursor: pointer;
+}
+
+.option label {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.check-answer-btn {
+    background: #2878e3;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.check-answer-btn:hover {
+    opacity: 0.9;
+}
+
+.quiz-feedback {
+    margin-top: 12px;
+}
+
+.correct-message {
+    color: green;
+    font-weight: bold;
+}
+
+.wrong-message {
+    color: red;
+    font-weight: bold;
+}
+
+.warning {
+    color: orange;
+    font-weight: bold;
+}
+
+.explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}

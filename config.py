@@ -1,0 +1,55 @@
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+
+BASE_DIR = Path(__file__).resolve().parent
+
+
+# Load .env file
+load_dotenv(BASE_DIR / ".env")
+
+
+# ---------------------------------------------------------
+# GEMINI CONFIGURATION
+# ---------------------------------------------------------
+
+GEMINI_API_KEY = os.getenv(
+    "GEMINI_API_KEY",
+    ""
+).strip()
+
+
+GEMINI_MODEL = os.getenv(
+    "GEMINI_MODEL",
+    "gemini-2.5-flash"
+).strip()
+
+
+# ---------------------------------------------------------
+# LOCAL EXPLANATION MODEL
+# ---------------------------------------------------------
+
+USE_LOCAL_EXPLAINER = os.getenv(
+    "USE_LOCAL_EXPLAINER",
+    "false"
+).lower() == "true"
+
+
+LOCAL_EXPLAINER_MODEL = os.getenv(
+    "LOCAL_EXPLAINER_MODEL",
+    "MBZUAI/LaMini-Flan-T5-783M"
+)
+
+
+# ---------------------------------------------------------
+# APPLICATION LIMITS
+# ---------------------------------------------------------
+
+MAX_INPUT_CHARS = int(
+    os.getenv(
+        "MAX_INPUT_CHARS",
+        "12000"
+    )
+)
